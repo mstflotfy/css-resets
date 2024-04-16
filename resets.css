@@ -8,6 +8,21 @@
   margin: 0;
 }
 
+/* Prevent the default flashing effect on active/pressed/hover states for all elements on touch devices*/
+@media (hover: none) {
+  * {
+    cursor: none !important;
+  }
+}
+
+div:active,
+div:focus {
+  background-color: none;
+  background: none;
+  color: none;
+  outline: none;
+}
+
 a,
 a:hover,
 a:focus,
@@ -23,11 +38,9 @@ html {
 
 body {
   font-size: 1.6rem;
-  padding: 2rem;
 }
 
 button,
-input,
 input[type="submit"],
 input[type="reset"] {
   background: none;
@@ -38,7 +51,7 @@ input[type="reset"] {
   cursor: pointer;
   outline: inherit;
 }
-  
+
 /* 
   Hide arrows in number input fields
 */
@@ -47,6 +60,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input[type=number] {
   -moz-appearance: textfield;
   appearance: none;
