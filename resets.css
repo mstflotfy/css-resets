@@ -1,5 +1,8 @@
 /* Resets */
 
+/* This section resets default browser styles for various elements. 
+   It sets `box-sizing` to `border-box` for consistent width calculations, 
+   removes default padding and margin for a clean slate. */
 *,
 *:before,
 *:after {
@@ -8,13 +11,18 @@
   margin: 0;
 }
 
-/* Prevent the default flashing effect on active/pressed/hover states for all elements on touch devices*/
+/* Disables cursor for all elements on touch devices to prevent 
+   flashing behavior on element taps due to hover styles. 
+   (Note: Consider using a media query for specific devices) */
 @media (hover: none) {
   * {
     cursor: none !important;
   }
 }
 
+/* Resets default styles for focused, active or hovered elements 
+   like buttons, links, etc. This ensures a consistent look and feel 
+   across browsers. */
 div:active,
 div:focus {
   background-color: none;
@@ -23,6 +31,8 @@ div:focus {
   outline: none;
 }
 
+/* Resets default styles for anchor tags (links). This removes 
+   underlines and sets the text color to inherit from the parent element. */
 a,
 a:hover,
 a:focus,
@@ -31,15 +41,23 @@ a:active {
   color: inherit;
 }
 
+/* Sets the base font size for the entire document (html) and 
+   defines a default font family. */
 html {
   font-size: 62.5%;
+  /* This is a common base size for responsive design */
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Sets the base font size for the body element. You can adjust 
+   this value to control the overall font size of your website. */
 body {
   font-size: 1.6rem;
 }
 
+/* Resets default styles for buttons, submit/reset inputs. 
+   This removes borders, padding, and sets the cursor to pointer 
+   for better user experience. */
 button,
 input[type="submit"],
 input[type="reset"] {
@@ -52,23 +70,24 @@ input[type="reset"] {
   outline: inherit;
 }
 
-/* 
-  Hide arrows in number input fields
-*/
+/* Hides the up/down arrows in number input fields for a cleaner look 
+   (works with Webkit browsers like Chrome and Safari). */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
+/* Disables the default number input field appearance for Firefox 
+   and ensures a consistent look across browsers. */
 input[type=number] {
   -moz-appearance: textfield;
   appearance: none;
 }
 
-/*
-  Improve media defaults
-*/
+/* Improves default media element display. Sets them to block level 
+   elements and allows them to take up the full width available 
+   (useful for responsive layouts). */
 img,
 picture,
 video,
@@ -78,9 +97,8 @@ svg {
   max-width: 100%;
 }
 
-/*
-  Avoid text overflows
-*/
+/* Prevents text overflow in heading and paragraph elements by enabling 
+   line breaks at word boundaries. */
 p,
 h1,
 h2,
@@ -91,6 +109,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* Removes default bullet points for ordered and unordered lists. */
 ol,
 ul {
   list-style: none;
