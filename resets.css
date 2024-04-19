@@ -114,3 +114,8 @@ ol,
 ul {
   list-style: none;
 }
+
+/* Remove default iframe border */
+iframe {
+  border: none;
+}
