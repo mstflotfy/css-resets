@@ -1,22 +1,29 @@
 /* Resets */
 
-/* This section resets default browser styles for various elements. 
-   It sets `box-sizing` to `border-box` for consistent width calculations, 
-   removes default padding and margin for a clean slate. */
+/* Reset default browser styles for all elements and pseudo-elements
+ * Set `box-sizing` to `border-box` for consistent width calculations
+ * Remove default padding and margin for a clean slate
+ */
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
 
-/* Disables cursor for all elements on touch devices to prevent 
-   flashing behavior on element taps due to hover styles. 
-   (Note: Consider using a media query for specific devices) */
+  /* Disables the tap highlight color on touch devices
+   * Non-standard property, use with caution
+   */
+  -webkit-tap-highlight-color: transparent; 
+}
 @media (hover: none) {
+  /* Disables tap highlight color on touch devices
+   * Some touches devices do not respond to the query (tested: iPad air 3, iPad Pro 2018, Samsung A25). Might be an issue with touch devices that get connected to a mouse.
+   * Ensures cursor is default even on elements with `cursor: pointer` set
+   * Might only be needed if `-webkit-tap-highlight-color` is not supported
+   */
   * {
-    cursor: none !important;
+    cursor: default !important; 
   }
 }
 
